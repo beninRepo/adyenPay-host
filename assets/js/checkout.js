@@ -10,7 +10,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (json) {
         var dt = json.paymentMethods;
-        console.log(json);
+
         const cardConfiguration = {
           hasHolderName: true,
           holderNameRequired: true,
@@ -76,7 +76,7 @@ $(document).ready(function () {
           } else {
             paymentQueryString = JSON.stringify(stateData.paymentMethod);
           }
-          console.log(paymentQueryString);
+
           $.ajax({
             type: "GET",
             url:
@@ -95,7 +95,6 @@ $(document).ready(function () {
           });
         }
         function showFinalResult(json) {
-          console.log(json);
           window.location.replace(
             "http://localhost:3000/paymentResponse.html?res=" +
               encodeURIComponent(JSON.stringify(json))
@@ -106,7 +105,6 @@ $(document).ready(function () {
   }
 
   function getClientKey() {
-    console.log("funkey");
     $.ajax({
       type: "GET",
       url: "http://localhost:248/api/clientKey",

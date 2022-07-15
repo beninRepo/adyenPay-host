@@ -4,7 +4,6 @@ $(document).ready(function () {
   var urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("redirectResult") != null) {
     var queryKey = urlParams.get("redirectResult");
-    console.log(queryKey);
 
     $.ajax({
       type: "GET",
